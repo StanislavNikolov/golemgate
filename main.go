@@ -15,51 +15,6 @@ import (
 	pk "github.com/Tnze/go-mc/net/packet"
 )
 
-/*
-import (
-        "database/sql"
-        _ "github.com/lib/pq"
-)
-const (
-	host     = "localhost"
-	port     = 5432
-	user     = "postgres"
-	password = "postgres"
-	dbname   = "playopenmc"
-)
-
-var DB *sql.DB
-func setupDB() {
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-		host, port, user, password, dbname)
-
-	db, err := sql.Open("postgres", psqlInfo)
-	if err != nil {
-		panic(err)
-	}
-	defer db.Close()
-
-	// actually checks that the connection to the DB is working
-	err = db.Ping()
-	if err != nil {
-		panic(err)
-	}
-
-	DB = db
-}
-
-// From database
-func getRoutingInfo(vhost string) (int, error) {
-        var port int
-        err := DB.QueryRow("SELECT port FROM routing WHERE vhost=$1", vhost).Scan(&port)
-        if err != nil {
-                return 0, errors.New("No such vhost")
-        }
-
-        return port, nil
-}
-*/
-
 // TODO extract parseJson and getRoutingInfo in another package
 func parseJson(readable io.Reader) (map[string]interface{}, error) {
 	var resp map[string]interface{}
